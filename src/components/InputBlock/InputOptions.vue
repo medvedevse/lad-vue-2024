@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <h2 class="input-block-header">Input Block</h2>
-    <input type="text" ref="input" v-model="text" />
+    <input type="text" v-model="text" />
     <div class="text-block">{{ text }}</div>
   </div>
 </template>
