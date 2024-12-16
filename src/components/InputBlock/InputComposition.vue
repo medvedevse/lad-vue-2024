@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const text = ref<String>('');
+const text = ref<string>('');
 </script>
 
 <style scoped>

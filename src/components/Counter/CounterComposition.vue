@@ -6,7 +6,7 @@
       <div class="count">{{ count }}</div>
       <button @click="decreaseCount">-</button>
     </div>
-		<div>Double count: {{ doubleCount }}</div>
+    <div>Double count: {{ doubleCount }}</div>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ const doubleCount = computed(() => count.value * 2);
 .container {
   display: flex;
   gap: 10px;
-	margin-bottom: 10px;
+  margin-bottom: 10px;
   button {
     width: 25px;
     font-size: 16px;

@@ -10,7 +10,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name: 'Input Options API',
+  name: 'Input Options API',
   data() {
     return {
       text: '',
