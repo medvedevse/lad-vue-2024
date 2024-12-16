@@ -27,5 +27,7 @@ const text = ref<string>('');
 
 .text-block {
 	word-break: break-all;
+	height: 100px;
+	overflow-y: auto;
 }
 </style>
