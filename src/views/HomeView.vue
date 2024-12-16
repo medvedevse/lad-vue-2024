@@ -5,9 +5,9 @@ import InputComposition from '../components/InputBlock/InputComposition.vue';
 
 <template>
   <main>
-		<h1 class='header'>Composition API Examples</h1>
+    <h1 class="header">Composition API Examples</h1>
     <CounterExample />
-		<InputComposition/>
+    <InputComposition />
   </main>
 </template>
 
@@ -16,6 +16,6 @@ import InputComposition from '../components/InputBlock/InputComposition.vue';
   color: hsla(160, 100%, 37%, 1);
   font-size: 30px;
   font-weight: bold;
-	text-align: center;
+  text-align: center;
 }
 </style>

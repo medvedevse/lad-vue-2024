@@ -5,9 +5,9 @@ import InputOptions from '@/components/InputBlock/InputOptions.vue';
 
 <template>
   <div class="about">
-    <h1 class='header'>Options API Examples</h1>
-		<CounterOptions/>
-		<InputOptions/> 
+    <h1 class="header">Options API Examples</h1>
+    <CounterOptions />
+    <InputOptions />
   </div>
 </template>
 
@@ -16,7 +16,6 @@ import InputOptions from '@/components/InputBlock/InputOptions.vue';
   color: hsla(160, 100%, 37%, 1);
   font-size: 30px;
   font-weight: bold;
-	text-align: center;
+  text-align: center;
 }
 </style>
-
