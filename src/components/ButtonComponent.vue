@@ -3,11 +3,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 
 export default defineComponent({
 	name: 'ButtonComponent',
-	props: ['title', 'click'],
+	props: {
+		title: {
+			type: String,
+			default: 'Кнопка',
+		},
+		click: {
+			type: Function as PropType<() => void>,
+		},
+	},
+
+	// ['title', 'click'],
 });
 </script>
 
