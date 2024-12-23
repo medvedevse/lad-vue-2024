@@ -17,14 +17,12 @@ export default defineComponent({
 </script>
 
 <template>
-	<div class="container">
-		<HeaderComponent @themeSwitcher="theme = $event" :themeProp="theme" />
-		<div class="wrapper">
-			<MainComponent :themeProp="theme" />
-			<AsideComponent :themeProp="theme" />
-		</div>
-		<FooterComponent :themeProp="theme" />
+	<HeaderComponent @themeSwitcher="theme = $event" :themeProp="theme" />
+	<div class="wrapper">
+		<MainComponent :themeProp="theme" />
+		<AsideComponent :themeProp="theme" />
 	</div>
+	<FooterComponent :themeProp="theme" />
 </template>
 
 <style scoped>

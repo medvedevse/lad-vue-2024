@@ -1,6 +1,6 @@
 <template>
 	<header :class="themeProp">
-		<a href="#" @click="changeTheme"
+		<a href="#" class="theme-changer" @click="changeTheme"
 			><img src="https://cdn-icons-png.flaticon.com/512/12180/12180746.png" alt="" width="30"
 		/></a>
 	</header>
@@ -41,11 +41,10 @@ header {
 	display: flex;
 }
 
-a {
+.theme-changer {
 	margin-left: auto;
-}
-
-img {
-	border-radius: 10px;
+	img {
+		border-radius: 10px;
+	}
 }
 </style>

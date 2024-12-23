@@ -16,8 +16,6 @@ export default defineComponent({
 			type: Function as PropType<() => void>,
 		},
 	},
-
-	// ['title', 'click'],
 });
 </script>
 
