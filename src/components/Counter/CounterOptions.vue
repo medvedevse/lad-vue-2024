@@ -14,7 +14,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name: 'Counter Options API',
+	name: 'CounterOptionsAPI',
 	data() {
 		return {
 			count: 0,

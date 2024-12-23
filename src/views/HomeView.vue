@@ -1,21 +1,35 @@
-<script setup lang="ts">
-import CounterExample from '../components/Counter/CounterComposition.vue';
-import InputComposition from '../components/InputBlock/InputComposition.vue';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import AsideComponent from '@/components/AsideComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
+import HeaderComponent from '@/components/HeaderComponent.vue';
+import MainComponent from '@/components/MainComponent.vue';
+
+export default defineComponent({
+	name: 'HomeView',
+	components: { HeaderComponent, MainComponent, AsideComponent, FooterComponent },
+	data() {
+		return {
+			theme: '',
+		};
+	},
+});
 </script>
 
 <template>
-	<main>
-		<h1 class="header">Composition API Examples</h1>
-		<CounterExample />
-		<InputComposition />
-	</main>
+	<div class="container">
+		<HeaderComponent @themeSwitcher="theme = $event" :themeProp="theme" />
+		<div class="wrapper">
+			<MainComponent :themeProp="theme" />
+			<AsideComponent :themeProp="theme" />
+		</div>
+		<FooterComponent :themeProp="theme" />
+	</div>
 </template>
 
 <style scoped>
-.header {
-	color: hsla(160, 100%, 37%, 1);
-	font-size: 30px;
-	font-weight: bold;
-	text-align: center;
+.wrapper {
+	display: grid;
+	grid-template-columns: 4fr 1fr;
 }
 </style>
