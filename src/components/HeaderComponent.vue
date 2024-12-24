@@ -13,18 +13,21 @@ export default defineComponent({
 	name: 'HeaderComponent',
 	data() {
 		return {
-			theme: 'light',
+			theme: { kind: 'dark' },
 		};
 	},
 	emits: ['themeSwitcher'],
 	methods: {
 		changeTheme() {
-			this.theme === 'dark' ? (this.theme = 'light') : (this.theme = 'dark');
+			this.theme.kind === 'dark' ? (this.theme.kind = 'light') : (this.theme.kind = 'dark');
 		},
 	},
 	watch: {
-		theme(newVal, prevVal) {
-			this.$emit('themeSwitcher', newVal);
+		'theme.kind': {
+			handler(newVal, prevVal) {
+				this.$emit('themeSwitcher', newVal);
+			},
+			immediate: true,
 		},
 	},
 	props: {
