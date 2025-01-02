@@ -1,9 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AsideComponent from '@/components/AsideComponent.vue';
-import FooterComponent from '@/components/FooterComponent.vue';
-import HeaderComponent from '@/components/HeaderComponent.vue';
-import MainComponent from '@/components/MainComponent.vue';
+import AsideComponent from '@/components/PostsOptionsAPI/AsideComponent.vue';
+import FooterComponent from '@/components/PostsOptionsAPI/FooterComponent.vue';
+import HeaderComponent from '@/components/PostsOptionsAPI/HeaderComponent.vue';
+import MainComponent from '@/components/PostsOptionsAPI/MainComponent.vue';
 
 export default defineComponent({
 	name: 'HomeView',

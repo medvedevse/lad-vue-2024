@@ -1,6 +1,6 @@
 <template>
 	<main :class="themeProp">
-		<h1>Посты</h1>
+		<h1>Посты Options API</h1>
 		<ul class="posts">
 			<li class="post" v-for="(post, index) in posts" :key="post.id">
 				<div v-if="index < idx">
@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ButtonComponent from './ButtonComponent.vue';
+import ButtonComponent from '../ButtonComponent.vue';
 import { posts } from '@/data/posts';
 
 export default defineComponent({
