@@ -18,7 +18,7 @@ defineOptions({ name: 'HeaderComponent' });
 
 const props = withDefaults(defineProps<IHeaderComponentProps>(), { themeProp: 'light' });
 
-const savedTheme = localStorage.getItem('theme') as 'light' | 'dark'
+const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
 const theme = ref<'light' | 'dark'>(savedTheme || 'dark');
 
 const changeTheme = () => {
