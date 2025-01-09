@@ -5,7 +5,7 @@
 			<li class="post" v-for="(post, index) in posts" :key="post.id">
 				<div v-if="index < idx">
 					<h2 class="post-title">{{ post.title }}</h2>
-					<div class="post-text">{{ post.text }}</div>
+					<div class="post-text">{{ post.body }}</div>
 				</div>
 			</li>
 		</ul>
@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ButtonComponent from '../ButtonComponent.vue';
-import { posts } from '@/data/posts';
+import { optionsPosts } from '@/data/posts';
 
 export default defineComponent({
 	name: 'MainComponent',
@@ -28,8 +28,8 @@ export default defineComponent({
 		return {
 			tenPostsTitle: 'Показать первые 10',
 			allPostsTitle: 'Показать все',
-			posts: posts,
-			idx: posts.length,
+			posts: optionsPosts,
+			idx: optionsPosts.length,
 		};
 	},
 	methods: {
@@ -37,7 +37,7 @@ export default defineComponent({
 			this.idx = 10;
 		},
 		showAllPosts() {
-			this.idx = posts.length;
+			this.idx = optionsPosts.length;
 		},
 	},
 	props: {
