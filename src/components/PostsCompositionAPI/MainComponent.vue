@@ -50,7 +50,7 @@ console.log(posts);
 const idx = ref<number>(posts.length);
 
 const showTenPosts = () => (idx.value = 10);
-const showAllPosts = () => (idx.value = fetchPosts.length);
+const showAllPosts = () => (idx.value = posts.length);
 </script>
 
 <style scoped>
