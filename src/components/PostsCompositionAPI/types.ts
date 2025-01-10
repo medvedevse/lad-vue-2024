@@ -9,3 +9,4 @@ export interface IHeaderComponentEmits {
 export interface IMainComponentProps extends IHeaderComponentProps {}
 export interface IAsideComponentProps extends IHeaderComponentProps {}
 export interface IFooterComponentProps extends IHeaderComponentProps {}
+export interface ILoaderComponentProps extends IHeaderComponentProps {}

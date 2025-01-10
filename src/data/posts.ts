@@ -29,4 +29,4 @@ export const optionsPosts: IPost[] = [
 	{ id: 20, title: 'Post20', body: 'Lorem, ipsum dolor.' },
 ];
 
-export const { data: compositionPosts } = await api.get<IPost[]>('/posts');
+export const getPosts = () => api.get<IPost[]>('/posts');

@@ -2,7 +2,7 @@
 	<main :class="props.themeProp">
 		<h1>Посты Composition API</h1>
 		<ul class="posts">
-			<li class="post" v-for="(post, index) in compositionPosts.slice(0, 20)" :key="post.id">
+			<li class="post" v-for="(post, index) in posts.slice(0, 20)" :key="post.id">
 				<div v-if="index < idx">
 					<h2 class="post-title">
 						{{ index + 1 + '. ' + post.title.replace(post.title[0], post.title[0].toUpperCase()) }}
@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import ButtonComponent from '../ButtonComponent.vue';
-import { compositionPosts } from '@/data/posts';
+import { getPosts } from '@/data/posts';
 import type { IMainComponentProps } from './types';
 
 defineOptions({ name: 'MainComponent' });
@@ -32,10 +32,25 @@ const props = withDefaults(defineProps<IMainComponentProps>(), { themeProp: 'lig
 
 const tenPostsTitle: string = 'Показать первые 10';
 const allPostsTitle: string = 'Показать все';
-const idx = ref<number>(compositionPosts.length);
+
+const fetchPosts = async () => {
+	try {
+		const { data: compositionPosts } = await getPosts();
+		return compositionPosts;
+	} catch (err) {
+		if (err instanceof Error) {
+			console.log(err.message);
+		}
+	}
+};
+const res = await fetchPosts();
+const posts = res ? res : [];
+console.log(posts);
+
+const idx = ref<number>(posts.length);
 
 const showTenPosts = () => (idx.value = 10);
-const showAllPosts = () => (idx.value = compositionPosts.length);
+const showAllPosts = () => (idx.value = fetchPosts.length);
 </script>
 
 <style scoped>
