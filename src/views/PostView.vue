@@ -14,6 +14,7 @@ defineOptions({ name: 'PostView' });
 onBeforeRouteLeave((to, from, next) => {
 	const exitToPosts = confirm('Вы уверены, что хотите выйти?');
 	if (exitToPosts) next();
+	else next(false);
 });
 </script>
 
