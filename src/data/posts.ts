@@ -30,3 +30,5 @@ export const optionsPosts: IPost[] = [
 ];
 
 export const getPosts = () => api.get<IPost[]>('/posts');
+
+export const getPost = (id: number) => api.get<IPost>(`/posts/${id}`);

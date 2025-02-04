@@ -39,13 +39,12 @@ const fetchPosts = async () => {
 		return compositionPosts;
 	} catch (err) {
 		if (err instanceof Error) {
-			console.log(err.message);
+			console.error(err.message);
 		}
 	}
 };
 const res = await fetchPosts();
 const posts = res ? res : [];
-console.log(posts);
 
 const idx = ref<number>(posts.length);
 
