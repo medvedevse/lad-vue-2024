@@ -8,6 +8,7 @@
 
 <script setup lang="ts">
 import { getPosts, type IPost } from '@/data/posts';
+import { AxiosError } from 'axios';
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -15,6 +16,8 @@ defineOptions({ name: 'PostCatalog' });
 const router = useRouter();
 
 const posts = ref<IPost[]>();
+const isLoading = ref<boolean>(false);
+const isError = ref<boolean>(false);
 
 const redirectToPost = (id: number) => {
 	router.push({
@@ -26,8 +29,19 @@ const redirectToPost = (id: number) => {
 };
 
 onMounted(async () => {
-	const { data } = await getPosts();
-	posts.value = data;
+	isError.value = false;
+	isLoading.value = true;
+	try {
+		const { data } = await getPosts();
+		posts.value = data;
+	} catch (err) {
+		if (err instanceof AxiosError) {
+			isError.value = true;
+			console.error(err.message);
+		}
+	} finally {
+		isLoading.value = false;
+	}
 });
 </script>
 

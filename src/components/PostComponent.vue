@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { getPost, type IPost } from '@/data/posts';
+import { AxiosError } from 'axios';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -13,11 +14,24 @@ defineOptions({ name: 'PostComponent' });
 const route = useRoute();
 
 const post = ref<IPost>();
+const isLoading = ref<boolean>(false);
+const isError = ref<boolean>(false);
 const postId: number = Number(route.params.post);
 
 onMounted(async () => {
-	const { data } = await getPost(postId);
-	post.value = data;
+	isError.value = false;
+	isLoading.value = true;
+	try {
+		const { data } = await getPost(postId);
+		post.value = data;
+	} catch (err) {
+		if (err instanceof AxiosError) {
+			isError.value = true;
+			console.error(err.message);
+		}
+	} finally {
+		isLoading.value = false;
+	}
 });
 </script>
 
