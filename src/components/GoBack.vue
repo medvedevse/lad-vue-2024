@@ -1,5 +1,5 @@
 <template>
-	<a href="#" @click="router.back()" class="back-link">
+	<a href="#" @click="router.back" class="back-link">
 		<img
 			src="https://cdn-icons-png.flaticon.com/512/54/54623.png "
 			alt="Назад"

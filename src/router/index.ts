@@ -29,6 +29,11 @@ const router = createRouter({
 			component: () => import('../views/PostView.vue'),
 		},
 		{
+			path: '/users',
+			name: 'users',
+			component: () => import('../views/UsersView.vue'),
+		},
+		{
 			path: '/:pathMatch(.*)',
 			component: NotFoundComponent,
 		},

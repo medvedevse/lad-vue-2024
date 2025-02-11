@@ -4,6 +4,7 @@
 			<RouterLink to="/">Home</RouterLink>
 			<RouterLink to="/about">About</RouterLink>
 			<RouterLink to="/posts">Posts</RouterLink>
+			<RouterLink to="/users">Users</RouterLink>
 		</nav>
 		<a href="#" class="theme-changer" @click="changeTheme"
 			><img src="https://cdn-icons-png.flaticon.com/512/12180/12180746.png" alt="" width="30"
