@@ -3,7 +3,6 @@ import { ref, watch } from 'vue';
 import { RouterView } from 'vue-router';
 import { useThemeStore } from './stores/theme';
 import { storeToRefs } from 'pinia';
-import ThemeChanger from './components/ThemeChanger.vue';
 
 const themeStore = useThemeStore();
 const { theme } = storeToRefs(themeStore);
