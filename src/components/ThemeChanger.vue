@@ -20,6 +20,7 @@ const { changeTheme } = themeStore;
 
 <style scoped lang="scss">
 .theme-changer {
+	width: 40px;
 	border: none;
 	background: transparent;
 	cursor: pointer;
@@ -27,5 +28,10 @@ const { changeTheme } = themeStore;
 	img {
 		border-radius: 10px;
 	}
+}
+
+.theme-changer:hover {
+	background-color: lightblue;
+	border-radius: 6px;
 }
 </style>
