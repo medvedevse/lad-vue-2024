@@ -30,6 +30,7 @@ a,
 @media (hover: hover) {
 	a img:hover {
 		background-color: lightblue;
+		border-radius: 10px;
 	}
 }
 
