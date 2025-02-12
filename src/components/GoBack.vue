@@ -17,6 +17,6 @@ const router = useRouter();
 
 <style scoped>
 .back-link {
-	padding: 0 8px;
+	padding: 4px 4px 0;
 }
 </style>
